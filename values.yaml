@@ -5,10 +5,16 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
+  repository: wjayesh/mlflow-tracking-server
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: latest
+
+containers:
+  port: 5000
+
+metadata_store: ""    # metadata store URL
+artifact_store: ""    # artifact store URL
 
 imagePullSecrets: []
 nameOverride: ""
