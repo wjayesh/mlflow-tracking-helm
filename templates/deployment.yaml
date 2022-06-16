@@ -33,7 +33,7 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/run.sh"]
+          command: ["./run.sh"]
           args: ["-m", "{{ .Values.metadata_store }}", "-a", "{{ .Values.artifact_store }}"]
           ports:
             - name: http
